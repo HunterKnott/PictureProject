@@ -99,7 +99,6 @@ public class Picture extends SimplePicture
     }
   }
   
-  //Make a regular for loop here
   public void zeroRed()
   {
 	  Pixel[][] pixels = this.getPixels2D();
@@ -108,6 +107,18 @@ public class Picture extends SimplePicture
 		  for(int col = 0; col < pixels[0].length; col++)
 		  {
 			  pixels[row][col].setRed(0);
+		  }
+	  }
+  }
+  
+  public void zeroGreen()
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  for(int row = 0; row < pixels.length; row++)
+	  {
+		  for(int col = 0; col < pixels[0].length; col++)
+		  {
+			  pixels[row][col].setGreen(0);
 		  }
 	  }
   }
@@ -257,7 +268,8 @@ public class Picture extends SimplePicture
     Picture beach = new Picture("beach.jpg");
     beach.explore();
     //beach.zeroBlue();
-    beach.zeroRed();
+    //beach.zeroRed();
+    //beach.zeroGreen();
     beach.explore();
   }
   

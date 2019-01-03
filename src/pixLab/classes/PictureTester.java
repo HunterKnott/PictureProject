@@ -16,6 +16,7 @@ public class PictureTester
     beach.explore();
     beach.zeroBlue();
     beach.zeroRed();
+    beach.zeroGreen();
     beach.explore();
   }
   
