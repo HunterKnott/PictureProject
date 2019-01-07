@@ -63,6 +63,17 @@ public class IntArrayWorker
     return total;
   }
   
+  public int getColTotal(int num)
+  {
+	  int total = 0;
+	  
+	  for(int col = 0; col < matrix[0].length; col++)
+	  {
+		  total = matrix[0][col];
+	  }
+	  return total;
+  }
+  
   /**
    * Method to return the total using a nested for-each loop
    * @return the total of the values in the array
