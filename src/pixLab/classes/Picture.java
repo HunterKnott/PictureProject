@@ -318,7 +318,15 @@ public class Picture extends SimplePicture
 				  int testedPixel = pixels[row][col].getRed();
 				  if(testedPixel % 10 == 0)
 				  {
-					  pixels[row][col].setRed(200);
+					  pixels[row][col].setRed(300);
+				  }
+				  if(testedPixel % 10 == 5)
+				  {
+					  pixels[row][col].setBlue(300);
+				  }
+				  if(testedPixel % 10 == 8)
+				  {
+					  pixels[row][col].setGreen(0);
 				  }
 			  }
 		  }
