@@ -240,6 +240,16 @@ public class Picture extends SimplePicture
       }
     }   
   }
+  
+  public void explicitCopy(Picture fromPic,
+		  				int startRow, int startCol,
+		  				int endRow, int endCol)
+  {
+	  Pixel fromPixel = null;
+	    Pixel toPixel = null;
+	    Pixel[][] toPixels = this.getPixels2D();
+	    Pixel[][] fromPixels = fromPic.getPixels2D();
+  }
 
   /** Method to create a collage of several pictures */
   public void createCollage()
@@ -286,6 +296,13 @@ public class Picture extends SimplePicture
     }
   }
   
+  int randomInt(int min, int max)
+  {
+	  Random rand = new Random();
+	  int randomNum = rand.nextInt((max - min) + 1) + min;
+	  return randomNum;
+	  
+  }
   public void glitchify()
   {
 	    Pixel[][] pixels = this.getPixels2D();
@@ -293,11 +310,16 @@ public class Picture extends SimplePicture
 	    Pixel rightPixel = null;
 	    int width = pixels[0].length;
 		int height = pixels.length;
-		for(int col = 0; col < width; col++)
+		int randomNumber = (int)Math.random() * 10;
+		for(int row = 0; row < height; row++)
 		  {
-			  for(int row = 0; row < height; row++)
+			  for(int col = 0; col < width; col++)
 			  {
-				  
+				  int testedPixel = pixels[row][col].getRed();
+				  if(testedPixel % 10 == 0)
+				  {
+					  pixels[row][col].setRed(200);
+				  }
 			  }
 		  }
   }
