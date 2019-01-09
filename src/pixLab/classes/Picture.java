@@ -316,7 +316,7 @@ public class Picture extends SimplePicture
 			  for(int col = 0; col < width; col++)
 			  {
 				  int testedPixel = pixels[row][col].getRed();
-				  if(testedPixel % 10 == 0)
+				  if(testedPixel % 10 == randomNumber)
 				  {
 					  pixels[row][col].setRed(300);
 				  }
@@ -330,6 +330,35 @@ public class Picture extends SimplePicture
 				  }
 			  }
 		  }
+  }
+  
+  public Color randomColor()
+  {
+	  Color random;
+	  int red = (int)(Math.random() * 256);
+	  int green = (int)(Math.random() * 256);
+	  int blue = (int)(Math.random() * 256);
+	  
+	  random = new Color(red, green, blue);
+	  
+	  return random;
+  }
+  
+  public void chromakey(Picture replacement, Color changeColor)
+  {
+	  Pixel [][] mainPixels = this.getPixels2D();
+	  Pixel [][] replacementPixels = replacement.getPixels2D();
+	  
+	  for(int row = 0; row < mainPixels.length; row++)
+	  {
+		  for(int col = 0; col < mainPixels[0].length; col++)
+		  {
+			  if(mainPixels[row][col].colorDistance(changeColor) < 10)
+			  {
+				  mainPixels[row][col].setColor(replacementPixels[row][col].getColor());
+			  }
+		  }
+	  }
   }
   
   
