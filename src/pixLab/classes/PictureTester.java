@@ -14,9 +14,9 @@ public class PictureTester
   {
     Picture beach = new Picture("beach.jpg");
     beach.explore();
-    beach.zeroBlue();
-    beach.zeroRed();
-    beach.zeroGreen();
+    //beach.zeroBlue();
+    //beach.zeroRed();
+    //beach.zeroGreen();
     beach.explore();
   }
   
@@ -54,6 +54,14 @@ public class PictureTester
     swan.explore();
   }
   
+  public static void testGlitchify()
+  {
+	  Picture beach = new Picture("beach.jpg");
+	  beach.explore();
+	  beach.glitchify();
+	  beach.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -75,7 +83,7 @@ public class PictureTester
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
-    testEdgeDetection();
+    //testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
@@ -83,5 +91,6 @@ public class PictureTester
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
+    testGlitchify();
   }
 }

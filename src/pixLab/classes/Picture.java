@@ -167,7 +167,6 @@ public class Picture extends SimplePicture
     int mirrorPoint = 276;
     Pixel leftPixel = null;
     Pixel rightPixel = null;
-    int count = 0;
     Pixel[][] pixels = this.getPixels2D();
     
     // loop through the rows
@@ -189,7 +188,6 @@ public class Picture extends SimplePicture
 	  int mirrorPoint = 360;
 	  Pixel leftPixel = null;
 	  Pixel rightPixel = null;
-	  int count = 0;
 	  Pixel[][] pixels = this.getPixels2D();
 	  
 	  for(int row = 231; row < 333; row++)
@@ -288,6 +286,22 @@ public class Picture extends SimplePicture
     }
   }
   
+  public void glitchify()
+  {
+	    Pixel[][] pixels = this.getPixels2D();
+	    Pixel leftPixel = null;
+	    Pixel rightPixel = null;
+	    int width = pixels[0].length;
+		int height = pixels.length;
+		for(int col = 0; col < width; col++)
+		  {
+			  for(int row = 0; row < height; row++)
+			  {
+				  
+			  }
+		  }
+  }
+  
   
   /* Main method for testing - each class in Java can have a main 
    * method 
@@ -295,15 +309,15 @@ public class Picture extends SimplePicture
   public static void main(String[] args) 
   {
     Picture seagull = new Picture("seagull.jpg");
-    seagull.explore();
+    //seagull.explore();
     //seagull.zeroBlue();
-    //seagull.zeroRed();
+    seagull.zeroRed();
     //seagull.zeroGreen();
-    seagull.mirrorVertical();
+    //seagull.mirrorVertical();
     //seagull.mirrorHorizontal();
-    seagull.mirrorGull();
-    seagull.createCollage();
-    seagull.explore();
+    //seagull.mirrorGull();
+    //seagull.createCollage();
+    //seagull.explore();
   }
   
 } // this } is the end of class Picture, put all new methods before this
