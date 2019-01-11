@@ -58,7 +58,7 @@ public class PictureTester
   
   public static void testGlitchify()
   {
-	  Picture beach = new Picture("beach.jpg");
+	  Picture beach = new Picture("FruitBowl.jpg");
 	  beach.explore();
 	  beach.glitchify();
 	  beach.explore();
@@ -103,7 +103,7 @@ public class PictureTester
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
-    //testGlitchify();
-	  testChromakey();
+    testGlitchify();
+	//testChromakey();
   }
 }
