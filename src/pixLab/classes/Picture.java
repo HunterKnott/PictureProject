@@ -319,18 +319,21 @@ public class Picture extends SimplePicture
 				  if(testedPixel % 10 == randomNumber)
 				  {
 					  pixels[row][col].setRed(300);
-					  pixels[row][col + 1].setRed(150);
-					  pixels[row][col - 1].setRed(150);
+					  pixels[row][col + 1].setRed(300);
+					  pixels[row][col - 1].setRed(300);
 				  }
 				  if(testedPixel % 10 == 5)
 				  {
 					  pixels[row][col].setBlue(300);
-					  pixels[row][col + 1].setBlue(150);
-					  pixels[row][col - 1].setBlue(150);
+					  
+					  pixels[row + 1][col].setBlue(300);
+					  pixels[row - 1][col].setBlue(300);
 				  }
 				  if(testedPixel % 10 == 8)
 				  {
 					  pixels[row][col].setGreen(0);
+					  pixels[row][col + 1].setGreen(0);
+					  pixels[row][col - 1].setGreen(0);
 				  }
 			  }
 		  }
@@ -380,6 +383,32 @@ public class Picture extends SimplePicture
 		  {
 			  shiftedValue = (col + amount) % width;
 			  copied[row][col].setColor(pixels[row][shiftedValue].getColor());
+		  }
+	  }
+	  for(int row = 0; row < pixels.length; row++)
+	  {
+		  for(int col = 0; col < pixels[0].length; col++)
+		  {
+			  pixels[row][col].setColor(copied[row][col].getColor());
+		  }
+	  }
+  }
+  
+  public void shiftUpDown(int amount)
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  Picture temp = new Picture(this);
+	  Pixel[][] copied = temp.getPixels2D();
+	  
+	  int shiftedValue = amount;
+	  int height = pixels.length;
+	  
+	  for(int row = 0; row < pixels.length; row++)
+	  {
+		  for(int col = 0; col < pixels[0].length; col++)
+		  {
+			  shiftedValue = (row + amount) % height;
+			  copied[row][col].setColor(pixels[shiftedValue][col].getColor());
 		  }
 	  }
 	  for(int row = 0; row < pixels.length; row++)
