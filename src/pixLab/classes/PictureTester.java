@@ -58,10 +58,10 @@ public class PictureTester
   
   public static void testGlitchify()
   {
-	  Picture beach = new Picture("FruitBowl.jpg");
-	  beach.explore();
-	  beach.glitchify();
-	  beach.explore();
+	  Picture fruitbowl = new Picture("FruitBowl.jpg");
+	  fruitbowl.explore();
+	  fruitbowl.glitchify();
+	  fruitbowl.explore();
   }
   
   public static void testChromakey()
@@ -73,6 +73,24 @@ public class PictureTester
 	source.chromakey(background, Color.WHITE);
 	source.explore();
   }
+	
+	public static void testShiftLeftRight()
+	{
+		Picture fruitbowl = new Picture("Fruitbowl.jpg");
+		fruitbowl.explore();
+		int amount = (int)(Math.random() * (fruitbowl.getWidth()));
+		fruitbowl.shiftLeftRight(amount);
+		fruitbowl.explore();
+	}
+	
+	public static void testShiftUpDown()
+	{
+		Picture fruitbowl = new Picture("Fruitbowl.jpg");
+		fruitbowl.explore();
+		int amount = (int)(Math.random() * (fruitbowl.getHeight()));
+		fruitbowl.shiftUpDown(amount);
+		fruitbowl.explore();
+	}
   
   /** Main method for testing.  Every class can have a main
     * method in Java */
@@ -105,5 +123,7 @@ public class PictureTester
     //testGetAverageForColumn(0);
     testGlitchify();
 	//testChromakey();
+    //testShiftLeftRight();
+    //testShiftUpDown();
   }
 }

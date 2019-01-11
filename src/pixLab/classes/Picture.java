@@ -319,21 +319,28 @@ public class Picture extends SimplePicture
 				  if(testedPixel % 10 == randomNumber)
 				  {
 					  pixels[row][col].setRed(300);
-					  pixels[row][col + 1].setRed(300);
-					  pixels[row][col - 1].setRed(300);
+					  if(col > 1 && col < 478)
+					  {
+						  pixels[row][col + 1].setRed(300);
+						  pixels[row][col + 2].setRed(300);
+						  pixels[row][col - 1].setRed(300);
+						  pixels[row][col - 2].setRed(300);
+					  }
 				  }
 				  if(testedPixel % 10 == 5)
 				  {
 					  pixels[row][col].setBlue(300);
-					  
-					  pixels[row + 1][col].setBlue(300);
-					  pixels[row - 1][col].setBlue(300);
+					  if(row > 1 && row < 328)
+					  {
+						  pixels[row + 1][col].setBlue(300);
+						  pixels[row + 2][col].setBlue(300);
+					  	  pixels[row - 1][col].setBlue(300);
+					  	  pixels[row - 2][col].setBlue(300);
+					  }
 				  }
 				  if(testedPixel % 10 == 8)
 				  {
 					  pixels[row][col].setGreen(0);
-					  pixels[row][col + 1].setGreen(0);
-					  pixels[row][col - 1].setGreen(0);
 				  }
 			  }
 		  }
@@ -382,6 +389,10 @@ public class Picture extends SimplePicture
 		  for(int col = 0; col< pixels[0].length; col++)
 		  {
 			  shiftedValue = (col + amount) % width;
+			  if(amount < 0)
+			  {
+				  shiftedValue = ((col + amount) % width + width) % width;
+			  }
 			  copied[row][col].setColor(pixels[row][shiftedValue].getColor());
 		  }
 	  }
