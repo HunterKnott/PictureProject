@@ -91,6 +91,17 @@ public class PictureTester
 		fruitbowl.shiftUpDown(amount);
 		fruitbowl.explore();
 	}
+	
+	public static void testMultipleFilters()
+	{
+		Picture fruitbowl = new Picture("Fruitbowl.jpg");
+		fruitbowl.explore();
+		fruitbowl.glitchify();
+		fruitbowl.explore();
+		int amount = (int)(Math.random() * (fruitbowl.getHeight()));
+		fruitbowl.shiftUpDown(amount);
+		fruitbowl.explore();
+	}
   
   /** Main method for testing.  Every class can have a main
     * method in Java */
@@ -121,9 +132,10 @@ public class PictureTester
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
-    testGlitchify();
+    //testGlitchify();
 	//testChromakey();
     //testShiftLeftRight();
     //testShiftUpDown();
+    testMultipleFilters();
   }
 }

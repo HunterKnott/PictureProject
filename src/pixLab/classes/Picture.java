@@ -437,16 +437,17 @@ public class Picture extends SimplePicture
    */
   public static void main(String[] args) 
   {
-    Picture seagull = new Picture("seagull.jpg");
-    //seagull.explore();
-    //seagull.zeroBlue();
-    seagull.zeroRed();
-    //seagull.zeroGreen();
-    //seagull.mirrorVertical();
-    //seagull.mirrorHorizontal();
-    //seagull.mirrorGull();
-    //seagull.createCollage();
-    //seagull.explore();
+    Picture sample = new Picture("Fruitbowl.jpg");
+    //sample.explore();
+    //sample.zeroBlue();
+    //sample.zeroRed();
+    //sample.zeroGreen();
+    //sample.mirrorVertical();
+    //sample.mirrorHorizontal();
+    //sample.mirrorGull();
+    //sample.createCollage();
+    //sample.glitchify();
+    //sample.explore();
   }
   
 } // this } is the end of class Picture, put all new methods before this
