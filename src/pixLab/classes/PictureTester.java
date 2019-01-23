@@ -110,9 +110,8 @@ public class PictureTester
 	
 	public static void testSteganography()
 	{
-		Picture source = new Picture("");
-		
-		Picture message = new Picture("");
+		Picture source = new Picture("temple.jpg");
+		Picture message = new Picture("PapyrusFace.jpg");
 		source.explore();
 		message.explore();
 		source.hidePicture(message);
@@ -176,6 +175,7 @@ public class PictureTester
 	//testChromakey();
     //testShiftLeftRight();
     //testShiftUpDown();
-    testMultipleFilters();
+	testSteganography();
+    //testMultipleFilters();
   }
 }
