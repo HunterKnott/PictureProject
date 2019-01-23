@@ -114,6 +114,8 @@ public class PictureTester
 		int amount2 = (int)(Math.random() * (sample.getWidth()));
 		sample.shiftLeftRight(amount2);
 		sample.explore();
+		sample.mirrorVertical();
+		sample.explore();
 		sample.glitchify();
 		sample.explore();
 	}
