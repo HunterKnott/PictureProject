@@ -303,7 +303,7 @@ public class Picture extends SimplePicture
 	  return randomNum;
 	  
   }
-  public void glitchify()
+  public void glitchify1()
   {
 	    Pixel[][] pixels = this.getPixels2D();
 	    Pixel leftPixel = null;
@@ -341,6 +341,49 @@ public class Picture extends SimplePicture
 				  if(testedPixel % 10 == 8)
 				  {
 					  pixels[row][col].setGreen(0);
+				  }
+			  }
+		  }
+  }
+  
+  public void glitchify2()
+  {
+	    Pixel[][] pixels = this.getPixels2D();
+	    Pixel leftPixel = null;
+	    Pixel rightPixel = null;
+	    int width = pixels[0].length;
+		int height = pixels.length;
+		int randomNumber = (int)Math.random() * 10;
+		for(int row = 0; row < height; row++)
+		  {
+			  for(int col = 0; col < width; col++)
+			  {
+				  int testedPixel = pixels[row][col].getRed();
+				  if(testedPixel % 7 == randomNumber)
+				  {
+					  pixels[row][col].setRed(300);
+					  if(col > 1 && col < 478)
+					  {
+						  pixels[row][col + 1].setRed(0);
+						  pixels[row][col + 2].setRed(0);
+						  pixels[row][col - 1].setRed(0);
+						  pixels[row][col - 2].setRed(0);
+					  }
+				  }
+				  if(testedPixel % 10 == 5)
+				  {
+					  pixels[row][col].setBlue(0);
+					  if(row > 1 && row < 328)
+					  {
+						  pixels[row + 1][col].setBlue(0);
+						  pixels[row + 2][col].setBlue(0);
+					  	  pixels[row - 1][col].setBlue(0);
+					  	  pixels[row - 2][col].setBlue(0);
+					  }
+				  }
+				  if(testedPixel % 10 == 8)
+				  {
+					  pixels[row][col].setGreen(300);
 				  }
 			  }
 		  }
@@ -427,6 +470,31 @@ public class Picture extends SimplePicture
 		  for(int col = 0; col < pixels[0].length; col++)
 		  {
 			  pixels[row][col].setColor(copied[row][col].getColor());
+		  }
+	  }
+  }
+  
+  public void hidePicture(Picture message)
+  {
+	  
+  }
+  
+  public void revealPicture()
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  
+	  for(int row = 0; row < pixels.length; row++)
+	  {
+		  for(int col = 0; col < pixels[0].length; col++)
+		  {
+			  if(pixels[row][col].getRed() % 2 != 1)
+			  {
+				  pixels[row][col].setColor(Color.GREEN);
+			  }
+			  else if(pixels[row][col].getRed() % 2 == 1)
+			  {
+				  pixels[row][col].setColor(Color.CYAN);
+			  }
 		  }
 	  }
   }

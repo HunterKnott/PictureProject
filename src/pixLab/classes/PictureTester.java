@@ -64,11 +64,19 @@ public class PictureTester
     swan.explore();
   }
   
-  public static void testGlitchify()
+  public static void testGlitchify1()
   {
 	  Picture fruitbowl = new Picture("FruitBowl.jpg");
 	  fruitbowl.explore();
-	  fruitbowl.glitchify();
+	  fruitbowl.glitchify1();
+	  fruitbowl.explore();
+  }
+  
+  public static void testGlitchify2()
+  {
+	  Picture fruitbowl = new Picture("FruitBowl.jpg");
+	  fruitbowl.explore();
+	  fruitbowl.glitchify2();
 	  fruitbowl.explore();
   }
   
@@ -100,14 +108,29 @@ public class PictureTester
 		fruitbowl.explore();
 	}
 	
+	public static void testSteganography()
+	{
+		Picture source = new Picture("");
+		
+		Picture message = new Picture("");
+		source.explore();
+		message.explore();
+		source.hidePicture(message);
+		source.explore();
+		source.revealPicture();
+		source.explore();
+	}
+	
 	public static void testMultipleFilters()
 	{
-		Picture sample = new Picture("Fruitbowl.jpg");
+		Picture sample = new Picture("fruitbowl.jpg");
 		sample.explore();
 		int amount = (int)(Math.random() * (sample.getHeight()));
 		sample.shiftUpDown(amount);
 		sample.explore();
-		Picture background = new Picture("Fruitbowl.jpg");
+		sample.glitchify1();
+		sample.explore();
+		Picture background = new Picture("fruitbowl.jpg");
 		background.explore();
 		sample.chromakey(background, Color.WHITE);
 		sample.explore();
@@ -116,7 +139,7 @@ public class PictureTester
 		sample.explore();
 		sample.mirrorVertical();
 		sample.explore();
-		sample.glitchify();
+		sample.glitchify2();
 		sample.explore();
 	}
   
