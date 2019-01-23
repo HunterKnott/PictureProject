@@ -94,13 +94,20 @@ public class PictureTester
 	
 	public static void testMultipleFilters()
 	{
-		Picture fruitbowl = new Picture("Fruitbowl.jpg");
-		fruitbowl.explore();
-		fruitbowl.glitchify();
-		fruitbowl.explore();
-		int amount = (int)(Math.random() * (fruitbowl.getHeight()));
-		fruitbowl.shiftUpDown(amount);
-		fruitbowl.explore();
+		Picture sample = new Picture("Fruitbowl.jpg");
+		sample.explore();
+		int amount = (int)(Math.random() * (sample.getHeight()));
+		sample.shiftUpDown(amount);
+		sample.explore();
+		Picture background = new Picture("Fruitbowl.jpg");
+		background.explore();
+		sample.chromakey(background, Color.WHITE);
+		sample.explore();
+		int amount2 = (int)(Math.random() * (sample.getWidth()));
+		sample.shiftLeftRight(amount2);
+		sample.explore();
+		sample.glitchify();
+		sample.explore();
 	}
   
   /** Main method for testing.  Every class can have a main
