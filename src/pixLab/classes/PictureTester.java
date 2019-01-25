@@ -123,21 +123,14 @@ public class PictureTester
 	public static void testMultipleFilters()
 	{
 		Picture sample = new Picture("fruitbowl.jpg");
-		sample.explore();
-		int amount = (int)(Math.random() * (sample.getHeight()));
-		sample.shiftUpDown(amount);
-		sample.explore();
+		int heightAmount = (int)(Math.random() * (sample.getHeight()));
+		sample.shiftUpDown(heightAmount);
 		sample.glitchify1();
-		sample.explore();
 		Picture background = new Picture("fruitbowl.jpg");
-		background.explore();
 		sample.chromakey(background, Color.WHITE);
-		sample.explore();
-		int amount2 = (int)(Math.random() * (sample.getWidth()));
-		sample.shiftLeftRight(amount2);
-		sample.explore();
+		int widthAmount = (int)(Math.random() * (sample.getWidth()));
+		sample.shiftLeftRight(widthAmount);
 		sample.mirrorVertical();
-		sample.explore();
 		sample.glitchify2();
 		sample.explore();
 	}
@@ -175,7 +168,7 @@ public class PictureTester
 	//testChromakey();
     //testShiftLeftRight();
     //testShiftUpDown();
-	testSteganography();
-    //testMultipleFilters();
+	//testSteganography();
+    testMultipleFilters();
   }
 }
